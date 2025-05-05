@@ -1,0 +1,18 @@
+﻿  Validating sources
+  Copying sources remotely to '192.168.7.2'
+  Validating architecture
+  Validating architecture
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(201,5): warning : Current project architecture 'ARM64' is incompatible with the remote system architecture 'ARM' ('armv7l'). Please switch the project architecture to 'ARM' in Configuration Manager. If you are cross-compiling you can ignore this warning.
+  Starting remote build
+  Compiling sources:
+  disp.c
+  funcs.c
+  gpio.c
+  kbd.c
+  pwm.c
+  qep.c
+  spi.c
+  ConveyorMotor.cpp
+  main.cpp
+  Linking objects
+  ConveyorBelt.vcxproj -> C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\bin\ARM64\Debug\ConveyorBelt.out

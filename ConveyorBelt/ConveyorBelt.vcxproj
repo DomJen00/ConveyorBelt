@@ -75,11 +75,31 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="ConveyorMotor.cpp" />
+    <ClCompile Include="disp.c" />
+    <ClCompile Include="funcs.c" />
+    <ClCompile Include="gpio.c" />
+    <ClCompile Include="kbd.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pwm.c" />
+    <ClCompile Include="qep.c" />
+    <ClCompile Include="spi.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConveyorMotor.h" />
+    <ClInclude Include="disp.h" />
+    <ClInclude Include="funcs.h" />
+    <ClInclude Include="gpio.h" />
+    <ClInclude Include="kbd.h" />
+    <ClInclude Include="pwm.h" />
+    <ClInclude Include="qep.h" />
+    <ClInclude Include="spi.h" />
   </ItemGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>rt;pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>

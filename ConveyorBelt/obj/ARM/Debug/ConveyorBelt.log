@@ -1,1 +1,21 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(158,5): error : There are no remote machines configured for remote builds. Please configure a machine using Tools | Options | Cross Platform | Connection Manager.
+﻿  Validating sources
+  Copying sources remotely to '192.168.7.2'
+  Validating architecture
+  Validating architecture
+  Starting remote build
+  Compiling sources:
+  ConveyorMotor.cpp
+C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\ConveyorMotor.cpp(49,1): warning : no return statement in function returning non-void [-Wreturn-type]
+C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\ConveyorMotor.cpp(49,1): warning :  }
+C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\ConveyorMotor.cpp(49,1): warning :  ^
+C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\ConveyorMotor.cpp(49,1): warning : /hom
+  disp.c
+  funcs.c
+  gpio.c
+  kbd.c
+  main.cpp
+  pwm.c
+  qep.c
+  spi.c
+  Linking objects
+  ConveyorBelt.vcxproj -> C:\Users\DomJen00\Documents\ConveyorBeltRepo\ConveyorBelt\bin\ARM\Debug\ConveyorBelt.out
