@@ -3,15 +3,14 @@ C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\pwm.c|638826392303544436|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\qep.c|638823131255838820|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\spi.c|638820742977786088|~/projects/ConveyorBelt/|
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\main.cpp|638835275113095822|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\main.cpp|638837111807683645|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\ConveyorMotor.cpp|638835168990828092|~/projects/ConveyorBelt/|
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\ServerBase.cpp|638832743476809676|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\ServerBase.cpp|638836881065812877|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.cpp|638831778381706978|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.cpp|638832598070125253|~/projects/ConveyorBelt/|
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.cpp|638835153268824748|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.cpp|638837109710482732|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\funcs.h|638826342770500440|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\gpio.h|638832510588992677|~/projects/ConveyorBelt/|
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\json.hpp|638833345971232570|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\pwm.h|638826343184264770|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\qep.h|638826343305270036|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\spi.h|638826343419566317|~/projects/ConveyorBelt/|
@@ -19,4 +18,7 @@ C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\ServerBase.h|638835172112121410|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.h|638832708825504891|~/projects/ConveyorBelt/|
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.h|638833516000610264|~/projects/ConveyorBelt/|
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h|638835271585306593|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h|638837109831555247|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.css|638836774648353207|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.html|638836774801053702|~/projects/ConveyorBelt/|
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.js|638837109149364488|~/projects/ConveyorBelt/|

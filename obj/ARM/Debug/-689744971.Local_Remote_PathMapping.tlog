@@ -17,7 +17,6 @@ C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.cpp|/home/debian/projects/ConveyorBelt/src/Webserver.cpp
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\funcs.h|/home/debian/projects/ConveyorBelt/lib/funcs.h
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\gpio.h|/home/debian/projects/ConveyorBelt/lib/gpio.h
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\json.hpp|/home/debian/projects/ConveyorBelt/lib/json.hpp
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\pwm.h|/home/debian/projects/ConveyorBelt/lib/pwm.h
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\qep.h|/home/debian/projects/ConveyorBelt/lib/qep.h
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\lib\spi.h|/home/debian/projects/ConveyorBelt/lib/spi.h
@@ -26,4 +25,7 @@ C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.h|/home/debian/projects/ConveyorBelt/src/SocketBase.h
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.h|/home/debian/projects/ConveyorBelt/src/TelnetServer.h
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h|/home/debian/projects/ConveyorBelt/src/Webserver.h
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.css|/home/debian/projects/ConveyorBelt/webpage.css
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.html|/home/debian/projects/ConveyorBelt/webpage.html
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\webpage.js|/home/debian/projects/ConveyorBelt/webpage.js
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\|/home/debian/projects/ConveyorBelt/

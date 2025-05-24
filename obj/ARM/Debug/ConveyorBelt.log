@@ -4,85 +4,10 @@
   Validating architecture
   Starting remote build
   Compiling sources:
-  funcs.c
-  gpio.c
-  pwm.c
-  qep.c
-  spi.c
   main.cpp
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.h(7): warning : "BUFFER_SIZE" redefined
 C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.h(7): warning :  #define BUFFER_SIZE  2048
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h(8): message : this is the location of the previous definition
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h(8): message :  #define BUFFER_SIZE  4096
-  ConveyorMotor.cpp
-  ServerBase.cpp
-  SocketBase.cpp
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.cpp(14,24): warning : conversion to ‘sa_family_t {aka short unsigned int}’ from ‘int’ may alter its value [-Wconversion]
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.cpp(14,24): warning :   _address.sin_family = domain;
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.cpp(14,24): warning :                         ^~~~~~
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\SocketBase.cpp(14,24): warning : /home/debian
-  TelnetServer.cpp
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.cpp(11,21): warning : ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.cpp(11,21): warning :      char* message = "Welcome to the Telnet Server\n";
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\TelnetServer.cpp(11,21): warning :                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  Webserver.cpp
-/usr/include/c++/6/bits/vector.tcc(75,70): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/vector.tcc(75,70): message :       _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(this->_M_impl._M_finish));
-/usr/include/c++/6/bits/vector.tcc(75,70): message :                                                                       ^
-/usr/include/c++/6/bits/vector.tcc(75,70): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\..\lib\json.hpp(22595,17): message : parameter passing for argument of type ‘std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > >::const_iterator {aka __gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >}’ will change in GCC 7.1
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\..\lib\json.hpp(22595,17): message :                  result.m_it.array_iterator = m_data.m_value.array->erase(pos.m_it.array_iterator);
-C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\..\lib\json.hpp(22595,17): message :                  ^~~~~~
-/usr/include/c++/6/bits/stl_map.h(483,4): message : parameter passing for argument of type ‘std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> >, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(1219,9): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(1219,9): message :          _M_allocate_and_copy(size_type __n,
-/usr/include/c++/6/bits/stl_vector.h(1219,9): message :          ^~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_vector.h(1219,9): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(1225,8): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(1147,7): message : parameter passing for argument of type ‘std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > >::const_iterator {aka __gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(1147,7): message :        erase(const_iterator __position)
-/usr/include/c++/6/bits/stl_vector.h(1147,7): message :        ^~~~~
-/usr/include/c++/6/bits/stl_tree.h(2193,7): message : parameter passing for argument of type ‘std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> >, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message :      __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(281,63): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_tree.h(1047,2): message : parameter passing for argument of type ‘std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> >, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_tree.h(1047,2): message :   _M_erase_aux(__position);
-/usr/include/c++/6/bits/stl_tree.h(1047,2): message :   ^~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_tree.h(1928,5): message : parameter passing for argument of type ‘std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> >, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message :      uninitialized_copy(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message :      ^~~~~~~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message :   __uninit_copy(__first, __last, __result);
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message :                                          ^
-/usr/include/c++/6/bits/stl_uninitialized.h(304,69): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(304,69): message :    _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
-/usr/include/c++/6/bits/stl_uninitialized.h(304,69): message :                                                                      ^
-/usr/include/c++/6/bits/stl_tree.h(2268,5): message : parameter passing for argument of type ‘std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> >, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::__cxx11::basic_string<char>, nlohmann::json_abi_v3_12_0::basic_json<> > >}’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message :          __uninit_copy(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message :          ^~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message : parameter passing for argument of type ‘std::move_iterator<nlohmann::json_abi_v3_12_0::basic_json<>*>’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_vector.h(324,31): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message :      __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(279,5): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(281,63): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message :      uninitialized_copy(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message :      ^~~~~~~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(107,5): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message :   __uninit_copy(__first, __last, __result);
-/usr/include/c++/6/bits/stl_uninitialized.h(126,41): message :                                          ^
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message : parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<const nlohmann::json_abi_v3_12_0::basic_json<>*, std::vector<nlohmann::json_abi_v3_12_0::basic_json<>, std::allocator<nlohmann::json_abi_v3_12_0::basic_json<> > > >’ will change in GCC 7.1
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message :          __uninit_copy(_InputIterator __first, _InputIterator __last,
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message :          ^~~~~~~~~~~~~
-/usr/include/c++/6/bits/stl_uninitialized.h(68,9): message : /usr/i
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h(11): message : this is the location of the previous definition
+C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\src\Webserver.h(11): message :  #define BUFFER_SIZE  4096
   Linking objects
   ConveyorBelt.vcxproj -> C:\Users\DomJen00\Documents\Master Mechatronics\Embedded Systems 2\ConveyorBelt\bin\ARM\Debug\ConveyorBelt.out

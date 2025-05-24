@@ -4,45 +4,98 @@ using json = nlohmann::json;
 
 Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 5555, INADDR_ANY, 10), _motor(motor) {
 	startServerThread();
+	cout << "Webserver running on Port: " << port << endl;
 }
 
 void Webserver::handleClientConnection(int clientSocket) {
-	char buffer[BUFFER_SIZE];
-	memset(buffer, 0, BUFFER_SIZE);
+	char buffer[BUFFER_SIZE] = { 0 };
 	read(clientSocket, buffer, BUFFER_SIZE);
-
-	// Cast char to string
 	string request(buffer);
 
-	// Extract JSON (after \r\n\r\n the body section starts)
-	size_t bodyStart = request.find("\r\n\r\n");
-	if (bodyStart != string::npos) {
-		string body = request.substr(bodyStart + 4);
-			
-		try {
-			json data = json::parse(body);
-			if (data.contains("rpm")) {
-				int rpm = data["rpm"];
-				_motor.moveMotor(rpm);
-				cout << "Speed [rpm]: " << rpm << endl;
-				// HTTP response
-				string response = "HTTP/1.1 200 OK\r\n"
-					"Content-Type: text/plain\r\n"
-					"Content-Length: 3\r\n"
-					"\r\n"
-					"OK\n";
-				cout << "Client request" << endl;
-				write(clientSocket, response.c_str(), response.size());
-			}else {
-				cerr << "No rpm field in JSON" << endl;
+	// Check if request is POST request
+	if (request.find("POST /set-speed") != string::npos) {
+		size_t bodyStart = request.find("\r\n\r\n");
+
+		if (bodyStart != string::npos) {
+			// after header
+			string body = request.substr(bodyStart + 4);
+			// convert rpm to integer and move motor
+			int rpm = atoi(body.c_str());
+			cout << rpm << endl;
+			//_motor.moveMotor(rpm);
+
+			string msg = "Motor running with: " + to_string(rpm) + "rpm";
+
+			ostringstream response;
+			response << "HTTP/1.1 200 OK\r\n"
+				<< "Content-Type: text/plain\r\n"
+				<< "Content-Length: " << msg.size() << "\r\n"
+				<< "Connection: close\r\n\r\n"
+				<< msg;
+
+			write(clientSocket, response.str().c_str(), response.str().size());
+			close(clientSocket);
+			return;
+		}
+	} else {
+		string path = "/webpage.html";
+		size_t getPos = request.find("GET ");
+
+		if (getPos != string::npos) {
+			size_t start = getPos + 4;
+			size_t end = request.find(" ", start);
+			string reqPath = request.substr(start, end - start);
+
+			cout << reqPath << endl;
+
+			if (reqPath != "/") {
+				path = reqPath;
 			}
 		}
-		catch (exception& e) {
-			cerr << "Invalid JSON" << endl;
-			string error = "HTTP/1.1 400 Bad Request\r\n Content-Type: text/plain\r\n Content-Length: 14\r\n\r\nInvalid\n";
-			write(clientSocket, error.c_str(), error.size());
-		}
+
+		string filename = "../../.." + path;
+		string content = loadFile(filename);
+		string mime = getMimeType(filename);
+
+		stringstream response;
+		response << "HTTP/1.1 200 OK\r\n"
+			<< "Content-Type: " << mime << "\r\n"
+			<< "Content-Length: " << content.size() << "\r\n"
+			<< "Connection: close\r\n\r\n"
+			<< content;
+
+		write(clientSocket, response.str().c_str(), response.str().size());
+		close(clientSocket);
+	}	
+}
+
+string Webserver::loadFile(const string& filename) {
+	ifstream file(filename);
+
+	if (!file.is_open()) {
+		return "<html><body><h1>404 Not Found</h1></body></html>";
 	}
 
-	close(clientSocket);
+	string content, line;
+
+	while (getline(file, line)) {
+		content += line + "\n";
+	}
+
+    file.close();
+
+	return content;
+}
+
+string Webserver::getMimeType(const string& path) {
+	if (path.length() >= 5 && path.substr(path.length() - 5) == ".html") {
+		return "text/html";
+	}
+	if (path.length() >= 4 && path.substr(path.length() - 4) == ".css") {
+		return "text/css";
+	}
+	if (path.length() >= 3 && path.substr(path.length() - 3) == ".js") {
+		return "application/javascript";
+	}
+	return "text/plain";
 }

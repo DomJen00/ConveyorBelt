@@ -90,7 +90,6 @@
   <ItemGroup>
     <ClInclude Include="lib\funcs.h" />
     <ClInclude Include="lib\gpio.h" />
-    <ClInclude Include="lib\json.hpp" />
     <ClInclude Include="lib\pwm.h" />
     <ClInclude Include="lib\qep.h" />
     <ClInclude Include="lib\spi.h" />
@@ -99,6 +98,11 @@
     <ClInclude Include="src\SocketBase.h" />
     <ClInclude Include="src\TelnetServer.h" />
     <ClInclude Include="src\Webserver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="webpage.css" />
+    <None Include="webpage.html" />
+    <None Include="webpage.js" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
