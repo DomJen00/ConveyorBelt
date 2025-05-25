@@ -1,6 +1,6 @@
 #include "Webserver.h"
 
-Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 5555, INADDR_ANY, 10), _motor(motor) {
+Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 4444, INADDR_ANY, 10), _motor(motor) {
 	startServerThread();
 	cout << "Webserver running on Port: " << port << endl;
 }
@@ -25,16 +25,17 @@ void Webserver::handlePOSTRequest(int clientSocket, const string& request) {
 	if (bodyStart != string::npos) {
 		// after header
 		string body = request.substr(bodyStart + 4);
-		// convert rpm to integer and move motor
-		int rpm = atoi(body.c_str());
-		_motor.moveMotor(rpm);
+		// convert rpm string to integer value
+		int rpm = atoi(body.c_str());		
 
 		string msg;
 		if (rpm == 0) {
 			msg = "Motor stopped.";
+			_motor.stopMotor();
 		}
 		else {
 			msg = "Motor running with: " + to_string(rpm) + "rpm.";
+			_motor.moveMotor(rpm);			
 		}
 
 		sendHttpResponse(clientSocket, msg);

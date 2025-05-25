@@ -7,8 +7,6 @@
 #include "ServerBase.h"
 #include "ConveyorMotor.h"
 
-#define BUFFER_SIZE		4096
-
 using namespace std;
 
 class Webserver : public ServerBase

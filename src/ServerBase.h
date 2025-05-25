@@ -4,6 +4,8 @@
 #include <atomic>
 #include "SocketBase.h"
 
+#define BUFFER_SIZE		4096
+
 using namespace std;
 
 class ServerBase

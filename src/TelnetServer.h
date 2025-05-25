@@ -4,8 +4,6 @@
 #include "ServerBase.h"
 #include "ConveyorMotor.h"
 
-#define BUFFER_SIZE		2048
-
 using namespace std;
 
 class TelnetServer : public ServerBase

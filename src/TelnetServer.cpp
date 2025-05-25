@@ -10,11 +10,11 @@ void TelnetServer::handleClientConnection(int clientSocket) {
     // Sending welcome message to the client
     char* message = "Welcome to the Telnet Server\n";
     write(clientSocket, message, strlen(message));
-
     char buffer[BUFFER_SIZE];
+
     while (true) {
         memset(buffer, 0, sizeof(buffer));
-        int recvBytes = read(clientSocket, buffer, sizeof(buffer) - 1);
+        int recvBytes = read(clientSocket, buffer, BUFFER_SIZE);
 
         if (recvBytes <= 0) {
             break;
