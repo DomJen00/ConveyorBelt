@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|solutionrelative:src\\Webserver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\ConveyorMotor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|solutionrelative:src\\ConveyorMotor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1BA7151-4EEC-4074-9459-DFBA6F79B13A}|ConveyorBelt.vcxproj|solutionrelative:src\\Webserver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Webserver.cpp",
+              "DocumentMoniker": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.cpp",
+              "RelativeDocumentMoniker": "src\\Webserver.cpp",
+              "ToolTip": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.cpp",
+              "RelativeToolTip": "src\\Webserver.cpp",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-25T07:09:03.581Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +49,35 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-22T14:14:38.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Webserver.h",
+              "DocumentMoniker": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.h",
+              "RelativeDocumentMoniker": "src\\Webserver.h",
+              "ToolTip": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\Webserver.h",
+              "RelativeToolTip": "src\\Webserver.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-25T07:09:19.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConveyorMotor.cpp",
+              "DocumentMoniker": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\ConveyorMotor.cpp",
+              "RelativeDocumentMoniker": "src\\ConveyorMotor.cpp",
+              "ToolTip": "C:\\Users\\DomJen00\\Documents\\Master Mechatronics\\Embedded Systems 2\\ConveyorBelt\\src\\ConveyorMotor.cpp",
+              "RelativeToolTip": "src\\ConveyorMotor.cpp",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-25T08:03:43.887Z",
               "EditorCaption": ""
             }
           ]

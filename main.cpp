@@ -5,24 +5,27 @@
 
 using namespace std;
 
-int main()
-{
-    /*
+void getCWD() {
     char cwd[1024];
-    if (getcwd(cwd, sizeof(cwd)) != nullptr) {
-        std::cout << "Aktuelles Arbeitsverzeichnis: " << cwd << std::endl;
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        cout << "Aktuelles Arbeitsverzeichnis: " << cwd << endl;
     }
     else {
-        std::cerr << "Fehler beim Ermitteln des Arbeitsverzeichnisses." << std::endl;
+        cerr << "Fehler beim Ermitteln des Arbeitsverzeichnisses." << endl;
     }
-    */
+}
 
+int main()
+{
+    getCWD();
     ConveyorMotor motor;
 
     //TelnetServer telnet(5555, motor);
     Webserver server(5555, motor);
 
     while (1) {
+        cout << "Actual RPM: " << motor.getSpeedRPM() << endl;
+        sleep(2);
     }
 
     server.stopServerThread();

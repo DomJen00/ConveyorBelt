@@ -125,7 +125,6 @@ int ConveyorMotor::rpmToPWM(int rpm) {
 
 	// Linear Interpolation
 	int duty = dutyMin_ns +  ((rpm - RPM_MIN) * (PWM_PERIOD_NS - dutyMin_ns)) / (RPM_MAX - RPM_MIN);
-	cout << "Duty: " << duty << endl;
 	return duty;
 }
 

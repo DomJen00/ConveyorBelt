@@ -4,7 +4,6 @@
 #include <sstream>
 #include <fstream>
 #include <cstdio>
-#include "../lib/json.hpp"
 #include "ServerBase.h"
 #include "ConveyorMotor.h"
 
@@ -16,9 +15,13 @@ class Webserver : public ServerBase
 {
 private:
 	ConveyorMotor& _motor;
+
 	void handleClientConnection(int clientSocket);
+	void handlePOSTRequest(int clientSocket, const string& request);
+	void handleGETRequest(int clientSocket, const string& request);
+	void sendHttpResponse(int clientSocket, const std::string& body, const std::string& contentType = "text/plain", const std::string& status = "200 OK");	
 	string loadFile(const string& filename);
-	string getMimeType(const string& path);
+	string getMimeType(const string& path);	
 	
 public:
 	Webserver(int port, ConveyorMotor& motor);

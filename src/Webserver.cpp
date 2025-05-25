@@ -1,7 +1,5 @@
 #include "Webserver.h"
 
-using json = nlohmann::json;
-
 Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 5555, INADDR_ANY, 10), _motor(motor) {
 	startServerThread();
 	cout << "Webserver running on Port: " << port << endl;
@@ -14,59 +12,74 @@ void Webserver::handleClientConnection(int clientSocket) {
 
 	// Check if request is POST request
 	if (request.find("POST /set-speed") != string::npos) {
-		size_t bodyStart = request.find("\r\n\r\n");
+		handlePOSTRequest(clientSocket, request);
+	}
+	else {
+		handleGETRequest(clientSocket, request);
+	}
+}
 
-		if (bodyStart != string::npos) {
-			// after header
-			string body = request.substr(bodyStart + 4);
-			// convert rpm to integer and move motor
-			int rpm = atoi(body.c_str());
-			cout << rpm << endl;
-			//_motor.moveMotor(rpm);
+void Webserver::handlePOSTRequest(int clientSocket, const string& request) {
+	size_t bodyStart = request.find("\r\n\r\n");
 
-			string msg = "Motor running with: " + to_string(rpm) + "rpm";
+	if (bodyStart != string::npos) {
+		// after header
+		string body = request.substr(bodyStart + 4);
+		// convert rpm to integer and move motor
+		int rpm = atoi(body.c_str());
+		_motor.moveMotor(rpm);
 
-			ostringstream response;
-			response << "HTTP/1.1 200 OK\r\n"
-				<< "Content-Type: text/plain\r\n"
-				<< "Content-Length: " << msg.size() << "\r\n"
-				<< "Connection: close\r\n\r\n"
-				<< msg;
-
-			write(clientSocket, response.str().c_str(), response.str().size());
-			close(clientSocket);
-			return;
+		string msg;
+		if (rpm == 0) {
+			msg = "Motor stopped.";
 		}
-	} else {
-		string path = "/webpage.html";
-		size_t getPos = request.find("GET ");
-
-		if (getPos != string::npos) {
-			size_t start = getPos + 4;
-			size_t end = request.find(" ", start);
-			string reqPath = request.substr(start, end - start);
-
-			cout << reqPath << endl;
-
-			if (reqPath != "/") {
-				path = reqPath;
-			}
+		else {
+			msg = "Motor running with: " + to_string(rpm) + "rpm.";
 		}
 
-		string filename = "../../.." + path;
-		string content = loadFile(filename);
-		string mime = getMimeType(filename);
+		sendHttpResponse(clientSocket, msg);
+	}
+	else {
+		sendHttpResponse(clientSocket, "Bad Request", "text/plain", "400 Bad Request");
+	}
+}
 
-		stringstream response;
-		response << "HTTP/1.1 200 OK\r\n"
-			<< "Content-Type: " << mime << "\r\n"
-			<< "Content-Length: " << content.size() << "\r\n"
-			<< "Connection: close\r\n\r\n"
-			<< content;
+void Webserver::handleGETRequest(int clientSocket, const string& request) {
+	string path = "/webpage.html";
+	size_t getPos = request.find("GET ");
 
-		write(clientSocket, response.str().c_str(), response.str().size());
-		close(clientSocket);
-	}	
+	if (getPos != string::npos) {
+		size_t start = getPos + 4;
+		size_t end = request.find(" ", start);
+		string reqPath = request.substr(start, end - start);
+
+		if (reqPath != "/") {
+			path = reqPath;
+		}
+	}
+
+	string filename = "../../.." + path;
+	string content = loadFile(filename);
+	string mime = getMimeType(filename);
+
+	if (content.find("404 Not Found") != string::npos) {
+		sendHttpResponse(clientSocket, content, "text/html", "404 Not Found");
+	}
+	else {
+		sendHttpResponse(clientSocket, content, mime);
+	}
+}
+
+void Webserver::sendHttpResponse(int clientSocket, const string& body, const string& contentType, const string& status) {
+	stringstream response;
+	response << "HTTP/1.1 " << status << "\r\n"
+		<< "Content-Type: " << contentType << "\r\n"
+		<< "Content-Length: " << body.size() << "\r\n"
+		<< "Connection: close\r\n\r\n"
+		<< body;
+
+	write(clientSocket, response.str().c_str(), response.str().size());
+	close(clientSocket);
 }
 
 string Webserver::loadFile(const string& filename) {
