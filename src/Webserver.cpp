@@ -1,6 +1,6 @@
 #include "Webserver.h"
 
-Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 4444, INADDR_ANY, 10), _motor(motor) {
+Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 4444, INADDR_ANY, 10), m_motor(motor) {
 	startServerThread();
 	cout << "Webserver running on Port: " << port << endl;
 }
@@ -31,11 +31,11 @@ void Webserver::handlePOSTRequest(int clientSocket, const string& request) {
 		string msg;
 		if (rpm == 0) {
 			msg = "Motor stopped.";
-			_motor.stopMotor();
+			m_motor.stopMotor();
 		}
 		else {
 			msg = "Motor running with: " + to_string(rpm) + "rpm.";
-			_motor.moveMotor(rpm);			
+			m_motor.moveMotor(rpm);			
 		}
 
 		sendHttpResponse(clientSocket, msg);
@@ -58,7 +58,7 @@ void Webserver::handleGETRequest(int clientSocket, const string& request) {
 			path = reqPath;
 		}
 	}
-
+	
 	string filename = "../../.." + path;
 	string content = loadFile(filename);
 	string mime = getMimeType(filename);

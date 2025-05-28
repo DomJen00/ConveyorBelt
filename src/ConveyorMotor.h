@@ -7,6 +7,8 @@ As of: 2025-05-05
 #pragma once
 
 #include <iostream>
+#include <pthread.h>
+#include <unistd.h>
 #include <fcntl.h>
 #include <cstring>
 extern "C" {
@@ -14,6 +16,7 @@ extern "C" {
 #include "../lib/qep.h"
 #include "../lib/gpio.h"
 #include "../lib/pwm.h"
+#include "../lib/piRegler.h"
 }
 
 using namespace std;
@@ -28,16 +31,14 @@ enum Direction {
 #define GPIO_NUM_IN1			22
 
 #define QEP_MODE_RELATIVE		1
-#define QEP_MODE_ABSOLUTE		0
-#define QEP_PERIOD_NS			100000000	
-#define QEP_RESOLUTION			500*4
+#define QEP_PERIOD_NS			10000000.0 
+#define QEP_RESOLUTION			2000.0
 
-#define PWM_PERIOD_NS			50000
+#define PWM_PERIOD_NS			50000.0
 #define PWM_POLARITY_NORMAL		0
 #define PWM_ENABLE				1
 #define PWM_DISABLE				0
-#define RPM_MAX					3130
-#define RPM_MIN					1000
+#define PWM_SCALING_FACTOR		PWM_PERIOD_NS / 7.0		// PWM_PERIOD_NS / rtb_Saturation of PI control 
 
 #define SPI_NUM_1				2
 #define SPI_BITS_PER_WORD		16
@@ -48,29 +49,30 @@ enum Direction {
 
 class ConveyorMotor {
 private:
-	int _targetRPM;
-	int _actualRPM;
-	bool _motorRunning;
+	int m_targetRPM;
+	int m_actualRPM;
+	bool m_motorRunning;
 
-	gpioDescriptor _gpioDIS;
-	gpioDescriptor _gpioENBL;
-	gpioDescriptor _gpioIN1;
-	pwmDescriptor _pwm;
-	spiDescriptor _spi;
-	qepDescriptor _qep;
-		
+	gpioDescriptor m_gpioDIS;
+	gpioDescriptor m_gpioENBL;
+	gpioDescriptor m_gpioIN1;
+	pwmDescriptor m_pwm;
+	spiDescriptor m_spi;
+	qepDescriptor m_qep;
+
+	pthread_t m_controlThread;
+
 	void setupEncoder();
 	void setupHBridge();
-	void enableMotor();
-	int rpmToPWM(int rpm);
+	void controlLoop();	
+
+	static void* controlLoopThread(void* arg);
 
 public:
 	ConveyorMotor();
 	~ConveyorMotor();
-	void moveMotor(int speed);
-	void moveProfile(int rpm);
-	void slowMove(int durationMS);
-	void stopMotor();
-	bool isRunning();	
+	void moveMotor(int rpm);
+	void stopMotor();	
+	bool isRunning();
 	int getSpeedRPM();
 };

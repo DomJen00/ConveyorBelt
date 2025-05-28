@@ -12,7 +12,7 @@ using namespace std;
 class Webserver : public ServerBase
 {
 private:
-	ConveyorMotor& _motor;
+	ConveyorMotor& m_motor;
 
 	void handleClientConnection(int clientSocket);
 	void handlePOSTRequest(int clientSocket, const string& request);

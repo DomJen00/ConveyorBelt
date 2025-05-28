@@ -9,9 +9,9 @@ using namespace std;
 class TelnetServer : public ServerBase
 {
 private:	
-	string _cmd;
-	int _rpm;	
-	ConveyorMotor& _motor;
+	string m_cmd;
+	int m_rpm;	
+	ConveyorMotor& m_motor;
 	void handleClientConnection(int clientSocket);
 	bool parseCommand(char* input, string* command, int* value);
 

@@ -18,15 +18,18 @@ void getCWD() {
 int main()
 {
     ConveyorMotor motor;
-    TelnetServer telnet(5555, motor);   
-    Webserver server(4444, motor);
 
-    while (1) {
-        cout << "Actual RPM: " << motor.getSpeedRPM() << endl;
-        sleep(2);
+    sleep(1);
+    motor.moveMotor(200);    
+    int cnt = 0;
+
+    while (cnt < 10) {
+        cout << "Speed: " << motor.getSpeedRPM() << endl;
+        sleep(1);
+        cnt++;
     }
 
-    server.stopServerThread();
-
+    motor.stopMotor();
+    
     return 0;
 }

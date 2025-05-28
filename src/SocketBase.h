@@ -6,8 +6,8 @@
 class SocketBase
 {
 private:
-	int _socket_fd;
-	struct sockaddr_in _address;
+	int m_socket_fd;
+	struct sockaddr_in m_address;
 
 public:
 	SocketBase(int domain, int service, int protocol, int port, long interface);

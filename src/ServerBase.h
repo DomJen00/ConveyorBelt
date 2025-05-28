@@ -11,9 +11,9 @@ using namespace std;
 class ServerBase
 {
 private:
-	SocketBase* _socket;
-	pthread_t _serverThread;
-	atomic <bool> _running;
+	SocketBase* m_socket;
+	pthread_t m_serverThread;
+	atomic <bool> m_running;
 
 	struct ClientThreadData {
 		ServerBase* server;

@@ -1,8 +1,8 @@
 ﻿#include "TelnetServer.h"
 
-TelnetServer::TelnetServer(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 5555, INADDR_ANY, 10), _motor(motor) {
-    _cmd = " ";
-    _rpm = 0;
+TelnetServer::TelnetServer(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 5555, INADDR_ANY, 10), m_motor(motor) {
+    m_cmd = " ";
+    m_rpm = 0;
     startServerThread();
 }
 
@@ -23,25 +23,25 @@ void TelnetServer::handleClientConnection(int clientSocket) {
         buffer[strcspn(buffer, "\r\n")] = 0;
 
         if (strcmp(buffer, "exit") == 0) {      
-            _motor.stopMotor();
+            m_motor.stopMotor();
             break;
         }
 
         int value = 0;
 
-        if (parseCommand(buffer, &_cmd, &value)) {
-            _rpm = value;
+        if (parseCommand(buffer, &m_cmd, &value)) {
+            m_rpm = value;
 
-            if (_cmd == "move") {
-                _motor.moveMotor(_rpm);
+            if (m_cmd == "move") {
+                m_motor.moveMotor(m_rpm);
                 cout << "Motor started" << endl;
             }
-            else if (_cmd == "stop") {
-                _motor.stopMotor();
+            else if (m_cmd == "stop") {
+                m_motor.stopMotor();
                 cout << "Motor stopped" << endl;
             }
-            else if (_cmd == "status") {
-                cout << _motor.getSpeedRPM() << endl;
+            else if (m_cmd == "status") {
+                cout << m_motor.getSpeedRPM() << endl;
             }
             else {
                 cout << "Invalid command. Format: move (-)rpm or stop" << endl;
