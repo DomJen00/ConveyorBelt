@@ -2,6 +2,9 @@
 #include "src/TelnetServer.h"
 #include "src/ConveyorMotor.h"
 #include <unistd.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,8 +19,9 @@ void getCWD() {
 }
 
 int main()
-{
+{   
     ConveyorMotor motor;
+    Webserver server(8080, motor); 
 
     sleep(1);
     motor.moveMotor(200);    
@@ -27,6 +31,13 @@ int main()
         cout << "Speed: " << motor.getSpeedRPM() << endl;
         sleep(1);
         cnt++;
+    }
+
+    motor.stopMotor();
+
+    while (1) {
+        cout << "Speed: " << motor.getSpeedRPM() << endl;
+        sleep(1);
     }
 
     motor.stopMotor();

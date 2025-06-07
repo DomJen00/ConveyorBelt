@@ -4,7 +4,7 @@
 ConveyorMotor::ConveyorMotor() {
 	m_targetRPM = 0;
 	m_actualRPM = 0;
-	m_motorRunning = false;
+	m_motorRunning = false;;
 
 	setupHBridge();
 	setupEncoder();	
@@ -138,19 +138,20 @@ void ConveyorMotor::controlLoop() {
 }
 
 void* ConveyorMotor::controlLoopThread(void* arg) {
-	static_cast<ConveyorMotor*>(arg)->controlLoop();
+	ConveyorMotor* motor = static_cast<ConveyorMotor*>(arg);
+	motor->controlLoop();
 	return nullptr;
 }
 
 void ConveyorMotor::moveMotor(int rpm) {
-	int direction = CW;
+	int direction = CW;		// default direction
 
 	if (rpm < 0) {
 		direction = CCW;
 		m_targetRPM = (- 1) * rpm;
-	}
-
-	m_targetRPM = rpm;
+	} else {
+		m_targetRPM = rpm;
+	}	
 
 	// Setting direction of the motor
 	if (gpioSetValue(&m_gpioIN1, direction) < 0) {
@@ -159,12 +160,12 @@ void ConveyorMotor::moveMotor(int rpm) {
 
 	if (!m_motorRunning) {
 		gpioSetValue(&m_gpioDIS, 0); // Enable motor
+		m_motorRunning = true;
 
 		if (pthread_create(&m_controlThread, nullptr, controlLoopThread, this) != 0) {
 			perror("Starting control thread failed.");
 		}
-		pthread_detach(m_controlThread);
-		m_motorRunning = true;
+		pthread_detach(m_controlThread);		
 	}
 }
 
@@ -173,8 +174,6 @@ void ConveyorMotor::stopMotor() {
 		pwmSetDuty_B(&m_pwm, 0);
 		gpioSetValue(&m_gpioDIS, 1);			
 		m_motorRunning = false;
-
-		//pthread_join(controlThread, NULL);
 	}	
 }
 

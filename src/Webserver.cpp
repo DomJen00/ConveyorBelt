@@ -1,6 +1,6 @@
 #include "Webserver.h"
 
-Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, 4444, INADDR_ANY, 10), m_motor(motor) {
+Webserver::Webserver(int port, ConveyorMotor& motor) : ServerBase(AF_INET, SOCK_STREAM, 0, port, INADDR_ANY, 10), m_motor(motor) {
 	startServerThread();
 	cout << "Webserver running on Port: " << port << endl;
 }
